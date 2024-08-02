@@ -1,0 +1,27 @@
+{
+  "schemaVersion": 1,
+  "id": "mages",
+  "version": "${version}",
+  "name": "mages",
+  "description": "",
+  "authors": [],
+  "contact": {
+    "repo": "https://github.com/caleb/mages"
+  },
+  "license": "MIT",
+  "icon": "assets/mages/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "client": [
+      "io.github.caleb67.mages.client.MagesClient"
+    ],
+    "main": [
+      "io.github.caleb67.mages.Mages"
+    ]
+  },
+  "depends": {
+    "fabricloader": ">=${loader_version}",
+    "fabric": "*",
+    "minecraft": "${minecraft_version}"
+  }
+}
