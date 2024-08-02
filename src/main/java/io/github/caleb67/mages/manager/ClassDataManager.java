@@ -29,9 +29,6 @@ public class ClassDataManager extends PersistentState
 
     public static PlayerClassData getPlayerState(LivingEntity player) {
         ClassDataManager serverState = getPersistent(player.getWorld().getServer());
-
-        // Either get the player by the uuid, or we don't have data for him yet, make a new player state
-
         return serverState.playerData.computeIfAbsent(player.getUuid(), uuid -> new PlayerClassData());
     }
 
@@ -62,9 +59,9 @@ public class ClassDataManager extends PersistentState
     }
 
     private static Type<ClassDataManager> type = new Type<>(
-            ClassDataManager::new, // If there's no 'ClassDataManager' yet create one
-            ClassDataManager::createFromNbt, // If there is a 'ClassDataManager' NBT, parse it with 'createFromNbt'
-            null // Supposed to be an 'DataFixTypes' enum, but we can just pass null
+            ClassDataManager::new,
+            ClassDataManager::createFromNbt,
+            null
     );
 
     @Override
